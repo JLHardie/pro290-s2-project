@@ -1,0 +1,124 @@
+openapi: 3.0.3
+info:
+  title: Computer Repair Shop Cart Service
+  version: 1.0.0
+paths:
+  /cart/{cartId}:
+    post:
+      description: Create a new cart with an item or add an item to an exisiting cart
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Item'
+        description: Item to add to cart
+        required: true
+      parameters:
+        - description: unique id of cart or 'new'
+          in: path
+          name: cartId
+          schema:
+            type: string
+          style: simple
+          required: true
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cart'
+    delete: 
+      description: delete cart by id
+      parameters:
+        - description: cart id
+          in: path
+          schema:
+            type: string
+            format: UUID
+          required: true
+          name: cartId
+      responses:
+        '204':
+          description: no content
+  /cart/{cartId}/{itemId}:
+    delete:
+      description: delete item from cart
+      parameters:
+        - description: cart id
+          in: path
+          name: cartId
+          required: true
+          schema:
+            type: string
+        - description: itemId
+          in: path
+          name: itemId
+          required: true
+          schema:
+            type: string
+      responses:
+        204:
+          description: no content
+  /cart/{cartId}/{itemId}/add/{increment}:
+    patch:
+      description: add quantity of items to cart
+      parameters:
+        - name: cartId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: itemId
+          required: true
+          in: path
+          schema:
+            type: string
+        - name: increment
+          required: true
+          in: path
+          schema:
+            type: string
+      responses:
+        204:
+          description: no content, item successfully incremented
+  /cart/{cartId}/{itemId}/subtract/{decrement}:
+    patch:
+      description: subtract quantity of items to cart
+      parameters:
+        - name: cartId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: itemId
+          required: true
+          in: path
+          schema:
+            type: string
+        - name: decrement
+          required: true
+          in: path
+          schema:
+            type: string
+      responses:
+        204:
+          description: no content, item successfully decremented     
+
+components:
+  schemas:
+    Cart:
+      example:
+        cartId: 2
+        items:
+          schema:
+            items:
+              $ref: '#/components/schemas/Item'
+            type: array
+    Item:
+      example:
+        itemId: 1
+        title: "intel core i9 9999"
+        description: fast af cpu
+        price: 9000.99
+        category: CPU
