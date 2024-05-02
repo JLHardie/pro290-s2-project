@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  InventoryServiceMongoDB:
+    image: mongo:latest
+    restart: always
+    ports: 
+      - "27000:27017"
+    networks:
+      - ComputerRepairNetwork
+    volumes:
+      - mongo-storage
+
+networks:
+  ComputerRepairNetwork: {}
+volumes:
+  mongo-storage: {}
