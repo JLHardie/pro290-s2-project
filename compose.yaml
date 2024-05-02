@@ -8,8 +8,7 @@ services:
     networks:
       - ComputerRepairNetwork
     volumes:
-      - mongo-storage
-
+      - mongo-storage:/data/db
 networks:
   ComputerRepairNetwork: {}
 volumes:
