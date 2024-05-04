@@ -3,6 +3,7 @@ package pro290.brain.damage.cartservice.models;
 import java.io.Serializable;
 import java.util.LinkedList;
 
+
 /**
  * @author jperezbenitez
  * @createdOn 5/3/2024 at 3:14 PM
@@ -12,7 +13,7 @@ import java.util.LinkedList;
 
 public class Cart implements Serializable {
     private String cartId;
-    private LinkedList<Item> items;
+    private LinkedList<Item> items = new LinkedList<>();
 
     public Cart() {
     }
