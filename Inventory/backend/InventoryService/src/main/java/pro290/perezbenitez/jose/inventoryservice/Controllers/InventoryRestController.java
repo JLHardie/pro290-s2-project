@@ -7,7 +7,7 @@
 package pro290.perezbenitez.jose.inventoryservice.Controllers;
 
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.ws.rs.PUT;
+//import jakarta.ws.rs.PUT;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

@@ -9,6 +9,26 @@ services:
       - ComputerRepairNetwork
     volumes:
       - mongo-storage:/data/db
+
+  InventoryServiceAPI:
+    build: ./Inventory/backend/InventoryService
+    image: inventoryserviceapi
+    restart: always
+    ports: 
+      - 8080:8080
+    networks:
+      - ComputerRepairNetwork
+    depends_on:
+      - InventoryServiceMongoDB
+    
+  CartServiceRedisDB:
+    image: redis:latest
+    restart: always
+    ports:
+      - 6379:6379
+    networks:
+      - ComputerRepairNetwork
+      
 networks:
   ComputerRepairNetwork: {}
 volumes:
