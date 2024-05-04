@@ -28,7 +28,16 @@ services:
       - 6379:6379
     networks:
       - ComputerRepairNetwork
-      
+  
+  CartServiceAPI:
+    build: ./Cart/backend/CartService
+    image: cartserviceapi
+    ports:
+      - 8081:8080
+    networks:
+      - ComputerRepairNetwork
+    depends_on:
+      - CartServiceRedisDB
 networks:
   ComputerRepairNetwork: {}
 volumes:
