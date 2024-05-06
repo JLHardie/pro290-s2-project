@@ -38,6 +38,16 @@ services:
       - ComputerRepairNetwork
     depends_on:
       - CartServiceRedisDB
+
+  UserServiceSQLDB:
+    build: ./SQL Server
+    image: userservicesqldb
+    restart: always
+    ports:
+      - 1433:1433
+    networks:
+      - ComputerRepairNetwork
+
 networks:
   ComputerRepairNetwork: {}
 volumes:
