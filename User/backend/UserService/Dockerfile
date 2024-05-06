@@ -4,9 +4,9 @@ COPY pom.xml /home/app
 RUN mvn -f /home/app/pom.xml clean package -DskipTests
 
 FROM tomcat:11.0.0-jdk17
-COPY --from=build /home/app/target/CartService.war /usr/local/tomcat/webapps/ROOT.war
+COPY --from=build /home/app/target/UserService.war /usr/local/tomcat/webapps/ROOT.war
 
 ENV SERVER_PORT=8080
-ENV REDIS_HOST=CartServiceRedisDB
-ENV REDIS_PORT=6379
+ENV SQL_HOST=UserServiceSQLDB
+ENV SQL_PORT=1433
 ENV EUREKA_HOST=EurekaRegistry
