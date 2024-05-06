@@ -47,8 +47,11 @@ services:
       - 1433:1433
     networks:
       - ComputerRepairNetwork
+    volumes:
+      - sql-storage:/var/opt/mssql
 
 networks:
   ComputerRepairNetwork: {}
 volumes:
   mongo-storage: {}
+  sql-storage: {}
