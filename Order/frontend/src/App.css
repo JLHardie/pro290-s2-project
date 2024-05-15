@@ -63,8 +63,9 @@ input {
   background-color: #4297a0;
   border-color: #4297a0;
   color: #f3e3e2;
-  font-size: 30px;
+  font-size: 25px;
   margin-top: 15px;
+  border: #27848d;
 }
 
 ::placeholder {
