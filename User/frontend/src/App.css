@@ -1,5 +1,5 @@
 body {
-  background: #74112f;
+  background: #3a5673;
   color: #f3e3e2;
   text-align: center;
 }
@@ -22,7 +22,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #0c0c1e;
+  background-color: #5a3e79;
   width: 100%
 }
 
@@ -38,7 +38,7 @@ li a {
 }
 
 li:hover {
-  background-color: #1b2e3c;
+  background-color: #c197d2;
 }
 
 .list1 {
@@ -55,8 +55,8 @@ label {
 }
 
 input {
-  background-color: #d14c6f;
-  border-color: #bb3c5e;
+  background-color: #4297a0;
+  border-color: #4297a0;
   color: #f3e3e2;
   font-size: 30px;
 }
@@ -66,7 +66,7 @@ p {
 }
 
 button {
-  background-color: #0c0c1e;
+  background-color: #a98ab0;
   color: #f3e3e2;
   font-size: 20px;
 }

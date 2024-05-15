@@ -1,5 +1,5 @@
 body {
-  background-color: #74112f;
+  background-color: #3a5673;
 }
 
 ul { 
@@ -20,7 +20,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #0c0c1e;
+  background-color: #5a3e79;
   width: 100%
 }
 
@@ -36,7 +36,7 @@ li a {
 }
 
 li:hover {
-  background-color: #1b2e3c;
+  background-color: #c197d2;
 }
 
 .list1 {
@@ -68,7 +68,7 @@ table {
 }
 
 td {
-  background-color: #db1f48;
+  background-color: #4297a0;
   padding: 10px;
 }
 

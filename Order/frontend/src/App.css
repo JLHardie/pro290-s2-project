@@ -1,38 +1,83 @@
-.App {
+body {
+  background: #3a5673;
+  color: #f3e3e2;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+ul { 
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav * {
+  z-index: 3;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+header {
+  font-size: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+ul {
+  position: fixed;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #5a3e79;
+  width: 100%
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li:hover {
+  background-color: #c197d2;
+}
+
+.list1 {
+  padding-right: 400px;
+
+}
+
+h1 {
+  font-size: 60px;
+}
+
+#name {
+  margin-top: 80px;
+}
+
+
+label {
+  font-size: 30px;
+}
+
+input {
+  background-color: #4297a0;
+  border-color: #4297a0;
+  color: #f3e3e2;
+  font-size: 30px;
+  margin-top: 15px;
+}
+
+::placeholder {
+  color: #f3e3e2;
+  opacity: 1; /* Firefox */
+}
+
+p {
+  font-size: 20px;
+}
+
+button {
+  background-color: #a98ab0;
+  color: #f3e3e2;
+  font-size: 20px;
 }

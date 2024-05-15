@@ -16,7 +16,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #0c0c1e;
+  background-color: #5a3e79;
   width: 100%
 }
 
@@ -32,7 +32,7 @@ li a {
 }
 
 li:hover {
-  background-color: #1b2e3c;
+  background-color: #c197d2;
 }
 
 .list1 {
@@ -52,12 +52,12 @@ li:hover {
 
 .left {
   left: 0;
-  background-color: #74112f;
+  background-color: #3a5673;
 }
 
 .right {
   right: 0;
-  background-color: #902142;
+  background-color: #4297a0;
 }
 
 .centered {
@@ -69,20 +69,21 @@ li:hover {
 }
 
 .centered button {
-  background-color: #0c0c1e;
+  background-color: #a98ab0;
   color: #f3e3e2;
   font-size: 35px;
 }
 
 .centered button:hover {
-  background-color: #1b2e3c;
+  background-color: #a98ab0;
 }
 
 .ticket {
-  background-color: #db1f48;
+  background-color: #4297a0;
+  color: #f3e3e2;
   width: 20%;
   text-align: center;
-  border-radius: 25%;
+  border-radius: 15%;
   margin-left: 30%;
   padding-left: 10%;
   padding-right: 10%;
@@ -90,4 +91,8 @@ li:hover {
 
 #ticket1 {
   margin-top: 10%;
+}
+
+.ticketDesc {
+  color: #f3e3e2;
 }
