@@ -85,5 +85,11 @@ public class InventoryRestController {
             itemRepo.save(item);
         }
     }
+
+    @GetMapping(path = "/search/{search}")
+    public List<Item> SearchInventory(@PathVariable String search){
+        return itemRepo.findByCategoryLikeIgnoreCaseOrDescriptionLikeIgnoreCaseOrTitleLikeIgnoreCase(search,search,search);
+    }
+
 }
 
