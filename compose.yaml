@@ -40,7 +40,7 @@ services:
     depends_on:
       - CartServiceRedisDB
 
-  UserServiceSQLDB:
+  RepairStoreSQLDB:
     build: ./SQL Server
     image: userservicesqldb
     restart: always
@@ -60,8 +60,18 @@ services:
     networks:
       - ComputerRepairNetwork
     depends_on:
-      - UserServiceSQLDB
+      - RepairStoreSQLDB
 
+  OrderServiceAPI:
+    build: ./Order/backend/OrderService
+    image: orderserviceapi
+    restart: always
+    ports:
+      - 8083:8080
+    networks:
+      - ComputerRepairNetwork
+    depends_on:
+      - RepairStoreSQLDB
 networks:
   ComputerRepairNetwork: {}
 volumes:

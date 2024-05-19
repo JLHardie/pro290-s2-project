@@ -4,7 +4,7 @@ COPY pom.xml /home/app
 RUN mvn -f /home/app/pom.xml clean package -DskipTests
 
 FROM tomcat:11.0.0-jdk17
-COPY --from=build /home/app/target/UserService.war /usr/local/tomcat/webapps/ROOT.war
+COPY --from=build /home/app/target/OrderService.war /usr/local/tomcat/webapps/ROOT.war
 
 ENV SERVER_PORT=8080
 ENV SQL_HOST=RepairStoreSQLDB
