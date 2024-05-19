@@ -6,40 +6,25 @@
  */
 package pro290.brain.damage.orderservice.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.annotation.Nullable;
-import jakarta.persistence.*;
+import java.util.UUID;
 
-@Entity(name = "Items")
-public class Item {
-    // A composite primary key with the item id and the order id, I got from chatGPT
-    @EmbeddedId
-    private ItemId itemId;
 
-    @ManyToOne
-    @MapsId("placedOn")  // This tells JPA to map the placedOn field of the composite key
-    @JoinColumn(name = "placedOn")
-    @JsonIgnore
-    @Nullable
-    private Order placedOn;
+
+public class ItemDTO {
+
+    private UUID itemId;
     private String title;
     private String description;
     private float price;
     private String category;
 
-    public Order getPlacedOn() {
-        return placedOn;
-    }
 
-    public void setPlacedOn(Order order) {
-        this.placedOn = order;
-    }
 
-    public ItemId getItemId() {
+    public UUID getItemId() {
         return itemId;
     }
 
-    public void setItemId(ItemId itemId) {
+    public void setItemId(UUID itemId) {
         this.itemId = itemId;
     }
 

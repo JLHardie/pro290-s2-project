@@ -6,6 +6,7 @@
  */
 package pro290.brain.damage.orderservice.models;
 
+import jakarta.annotation.Nullable;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
@@ -25,6 +26,7 @@ public class Order {
     private LocalDate createDate;
 
     @OneToMany(mappedBy = "placedOn")
+    @Nullable
     private List<Item> items = new ArrayList<>();
 
 

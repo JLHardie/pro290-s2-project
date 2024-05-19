@@ -8,15 +8,17 @@ package pro290.brain.damage.orderservice.controllers;
 
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import pro290.brain.damage.orderservice.dal.ItemRepository;
 import pro290.brain.damage.orderservice.dal.ItemRepositoryImplementation;
 import pro290.brain.damage.orderservice.dal.OrderRepository;
 import pro290.brain.damage.orderservice.models.ApiResponse;
+import pro290.brain.damage.orderservice.models.Item;
 import pro290.brain.damage.orderservice.models.Order;
 import pro290.brain.damage.orderservice.models.OrderCreationDTO;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -38,11 +40,13 @@ public class OrderRestController {
     public ApiResponse CreateOrder(@PathVariable UUID userId, @RequestBody OrderCreationDTO orderDTO){
         if (LocalDate.now().isBefore(orderDTO.payment.getExpirationDate())) {
             Order order = new Order();
-            order.setOrderId(UUID.randomUUID());
+            UUID orderId = UUID.randomUUID();
+            order.setOrderId(orderId);
             order.setUserId(userId);
-            order.setItems(orderDTO.getItems());
+            List<Item> items = orderDTO.GetListOfItems(order);
+//            order.setItems(items);
             order.setCreateDate(LocalDate.now());
-            itemRepository.AddListOfItems(orderDTO.getItems(), order);
+            itemRepository.AddListOfItems(items, order);
             return new ApiResponse(true, "Order created.", order);
         }
         return new ApiResponse(false, "Payment expired.", null);
@@ -56,5 +60,22 @@ public class OrderRestController {
             return new ApiResponse(false, "No order found with that id.", null);
         }
         return new ApiResponse(true, "Order found.", order);
+    }
+
+    @GetMapping("/user/{userId}")
+    public ApiResponse GetOrdersByUserId(HttpServletResponse http, @PathVariable UUID userId){
+        List<Order> orders = orderRepository.findByUserId(userId);
+        if (orders == null || orders.isEmpty()){
+            http.setStatus(404);
+            return new ApiResponse(false, "no orders found.", orders);
+        }
+        return new ApiResponse(true, "Orders found.", orders);
+    }
+
+    @GetMapping("/")
+    @ResponseStatus(HttpStatus.OK)
+    public ApiResponse GetAllOrders(){
+        List<Order> orders = orderRepository.findAll();
+        return new ApiResponse(true, "All orders found", orders);
     }
 }

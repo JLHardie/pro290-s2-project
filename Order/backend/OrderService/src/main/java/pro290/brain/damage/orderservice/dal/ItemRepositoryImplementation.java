@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import pro290.brain.damage.orderservice.models.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class ItemRepositoryImplementation {
@@ -22,11 +23,11 @@ public class ItemRepositoryImplementation {
     ItemRepository itemRepository;
 
     public void AddListOfItems(List<Item> items, Order order){
-        itemRepository.saveAll(items);
-        for (Item item : items) {
-            item.setPlacedOn(order);
-        }
         orderRepository.save(order);
         itemRepository.saveAll(items);
+        order.setItems(items);
+        orderRepository.save(order);
+
     }
+
 }
