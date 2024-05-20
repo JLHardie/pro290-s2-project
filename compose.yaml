@@ -20,6 +20,7 @@ services:
       - ComputerRepairNetwork
     depends_on:
       - InventoryServiceMongoDB
+      - EurekaRegistry
     
   CartServiceRedisDB:
     image: redis:latest
@@ -39,6 +40,7 @@ services:
       - ComputerRepairNetwork
     depends_on:
       - CartServiceRedisDB
+      - EurekaRegistry
 
   RepairStoreSQLDB:
     build: ./SQL Server
@@ -61,6 +63,7 @@ services:
       - ComputerRepairNetwork
     depends_on:
       - RepairStoreSQLDB
+      - EurekaRegistry
 
   OrderServiceAPI:
     build: ./Order/backend/OrderService
@@ -72,6 +75,18 @@ services:
       - ComputerRepairNetwork
     depends_on:
       - RepairStoreSQLDB
+      - EurekaRegistry
+
+  EurekaRegistry:
+    container_name: EurekaRegistry
+    image: steeltoeoss/eureka-server:latest
+    restart: always
+    hostname: EurekaRegistry
+    ports:
+      - 8761:8761
+    networks: 
+      - ComputerRepairNetwork
+
 networks:
   ComputerRepairNetwork: {}
 volumes:

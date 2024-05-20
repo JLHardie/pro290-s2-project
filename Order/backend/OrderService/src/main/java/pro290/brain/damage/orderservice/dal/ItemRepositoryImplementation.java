@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import pro290.brain.damage.orderservice.models.*;
 
 import java.util.List;
-import java.util.UUID;
 
 @Service
 public class ItemRepositoryImplementation {
