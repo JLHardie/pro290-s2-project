@@ -77,6 +77,18 @@ services:
       - RepairStoreSQLDB
       - EurekaRegistry
 
+  TicketServiceAPI:
+    build: ./Ticket/backend/PRO290TicketServiceAPI
+    image: ticketserviceapi
+    restart: always
+    ports:
+      - 8084:8080
+    networks:
+      - ComputerRepairNetwork
+    depends_on:
+      - RepairStoreSQLDB
+      - EurekaRegistry
+
   EurekaRegistry:
     container_name: EurekaRegistry
     image: steeltoeoss/eureka-server:latest
@@ -86,6 +98,7 @@ services:
       - 8761:8761
     networks: 
       - ComputerRepairNetwork
+
 
 networks:
   ComputerRepairNetwork: {}

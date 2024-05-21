@@ -24,6 +24,18 @@ public class Pro290ApiGatewayApplication {
                 .route("mailService", r -> r.path("/mailService/**")
                         .filters(f -> f.stripPrefix(1))
                         .uri("lb://PRO290MAILINGSERVICEAPI"))
+                .route("inventoryService", r -> r.path("/inventoryService/**")
+                        .filters(f -> f.stripPrefix(1))
+                        .uri("lb://PRO290INVENTORYSERVICEAPI"))
+                .route("cartService", r -> r.path("/cartService/**")
+                        .filters(f -> f.stripPrefix(1))
+                        .uri("lb://PRO290CARTSERVICEAPI"))     
+                .route("userService", r -> r.path("/userService/**")
+                        .filters(f -> f.stripPrefix(1))
+                        .uri("lb://PRO290USERSERVICEAPI"))
+                .route("orderService", r -> r.path("/orderService/**")
+                        .filters(f -> f.stripPrefix(1))
+                        .uri("lb://PRO290ORDERSERVICEAPI"))
                 .build();
     }
 
