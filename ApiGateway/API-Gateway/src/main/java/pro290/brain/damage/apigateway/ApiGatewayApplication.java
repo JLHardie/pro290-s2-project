@@ -1,4 +1,4 @@
-package org.example.pro290apigateway;
+package pro290.brain.damage.apigateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,11 +9,7 @@ import org.springframework.context.annotation.Bean;
 
 @EnableDiscoveryClient
 @SpringBootApplication
-public class Pro290ApiGatewayApplication {
-
-    public static void main(String[] args) {
-        SpringApplication.run(Pro290ApiGatewayApplication.class, args);
-    }
+public class ApiGatewayApplication {
 
     @Bean
     public RouteLocator customRoutes(RouteLocatorBuilder builder) {
@@ -29,7 +25,7 @@ public class Pro290ApiGatewayApplication {
                         .uri("lb://PRO290INVENTORYSERVICEAPI"))
                 .route("cartService", r -> r.path("/cartService/**")
                         .filters(f -> f.stripPrefix(1))
-                        .uri("lb://PRO290CARTSERVICEAPI"))     
+                        .uri("lb://PRO290CARTSERVICEAPI"))
                 .route("userService", r -> r.path("/userService/**")
                         .filters(f -> f.stripPrefix(1))
                         .uri("lb://PRO290USERSERVICEAPI"))
@@ -37,6 +33,10 @@ public class Pro290ApiGatewayApplication {
                         .filters(f -> f.stripPrefix(1))
                         .uri("lb://PRO290ORDERSERVICEAPI"))
                 .build();
+    }
+
+    public static void main(String[] args) {
+        SpringApplication.run(ApiGatewayApplication.class, args);
     }
 
 }

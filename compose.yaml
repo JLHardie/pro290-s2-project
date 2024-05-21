@@ -99,7 +99,7 @@ services:
 
   API-Gateway:
     container_name: api-gateway
-    build: ./ApiGateway/PRO290APIGateway
+    build: ./ApiGateway/API-Gateway
     image: springcloudapigateway
     restart: always
     ports:
@@ -108,6 +108,11 @@ services:
       - ComputerRepairNetwork
     depends_on:
       - EurekaRegistry
+      - CartServiceAPI
+      - UserServiceAPI
+      - InventoryServiceAPI
+      - TicketServiceAPI
+      - OrderServiceAPI
 
 networks:
   ComputerRepairNetwork: {}
