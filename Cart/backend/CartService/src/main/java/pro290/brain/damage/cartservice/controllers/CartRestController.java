@@ -20,7 +20,7 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/Cart")
+@RequestMapping("")
 public class CartRestController {
     @Autowired
     private RedisTemplate<String, Cart> redisTemplate;

@@ -14,8 +14,6 @@ services:
     build: ./Inventory/backend/InventoryService
     image: inventoryserviceapi
     restart: always
-    ports: 
-      - 8080:8080
     networks:
       - ComputerRepairNetwork
     depends_on:
@@ -77,6 +75,18 @@ services:
       - RepairStoreSQLDB
       - EurekaRegistry
 
+  TicketServiceAPI:
+    build: ./Ticket/backend/PRO290TicketServiceAPI
+    image: ticketserviceapi
+    restart: always
+    ports:
+      - 8084:8080
+    networks:
+      - ComputerRepairNetwork
+    depends_on:
+      - RepairStoreSQLDB
+      - EurekaRegistry
+
   EurekaRegistry:
     container_name: EurekaRegistry
     image: steeltoeoss/eureka-server:latest
@@ -86,6 +96,23 @@ services:
       - 8761:8761
     networks: 
       - ComputerRepairNetwork
+
+  API-Gateway:
+    container_name: api-gateway
+    build: ./ApiGateway/API-Gateway
+    image: springcloudapigateway
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - ComputerRepairNetwork
+    depends_on:
+      - EurekaRegistry
+      - CartServiceAPI
+      - UserServiceAPI
+      - InventoryServiceAPI
+      - TicketServiceAPI
+      - OrderServiceAPI
 
 networks:
   ComputerRepairNetwork: {}

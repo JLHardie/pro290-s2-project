@@ -1,10 +1,10 @@
-package org.example.pro290apigateway;
+package pro290.brain.damage.apigateway;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Pro290ApiGatewayApplicationTests {
+class ApiGatewayApplicationTests {
 
     @Test
     void contextLoads() {
