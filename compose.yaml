@@ -14,8 +14,6 @@ services:
     build: ./Inventory/backend/InventoryService
     image: inventoryserviceapi
     restart: always
-    ports: 
-      - 8080:8080
     networks:
       - ComputerRepairNetwork
     depends_on:
@@ -99,6 +97,17 @@ services:
     networks: 
       - ComputerRepairNetwork
 
+  API-Gateway:
+    container_name: api-gateway
+    build: ./ApiGateway/PRO290APIGateway
+    image: springcloudapigateway
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - ComputerRepairNetwork
+    depends_on:
+      - EurekaRegistry
 
 networks:
   ComputerRepairNetwork: {}
