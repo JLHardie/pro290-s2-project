@@ -11,3 +11,8 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_check
+
+- rule:
+  conversation_start: true
+  steps:
+  - utter_welcome_message  

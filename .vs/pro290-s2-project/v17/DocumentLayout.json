@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\kalawson\\Documents\\GitHub\\pro290-s2-project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kalawson\\Documents\\GitHub\\pro290-s2-project\\Rasa\\data\\stories.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Rasa\\data\\stories.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kalawson\\Documents\\GitHub\\pro290-s2-project\\Rasa\\data\\rules.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Rasa\\data\\rules.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kalawson\\Documents\\GitHub\\pro290-s2-project\\Rasa\\domain.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Rasa\\domain.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kalawson\\Documents\\GitHub\\pro290-s2-project\\Rasa\\data\\stories.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Rasa\\data\\stories.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kalawson\\Documents\\GitHub\\pro290-s2-project\\Rasa\\data\\nlu.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,7 +34,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "stories.yml",
               "DocumentMoniker": "C:\\Users\\kalawson\\Documents\\GitHub\\pro290-s2-project\\Rasa\\data\\stories.yml",
               "RelativeDocumentMoniker": "Rasa\\data\\stories.yml",
@@ -42,31 +42,29 @@
               "RelativeToolTip": "Rasa\\data\\stories.yml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2024-05-16T02:38:38.357Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-16T02:38:38.357Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "domain.yml",
               "DocumentMoniker": "C:\\Users\\kalawson\\Documents\\GitHub\\pro290-s2-project\\Rasa\\domain.yml",
               "RelativeDocumentMoniker": "Rasa\\domain.yml",
               "ToolTip": "C:\\Users\\kalawson\\Documents\\GitHub\\pro290-s2-project\\Rasa\\domain.yml",
               "RelativeToolTip": "Rasa\\domain.yml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAANAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAACAAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2024-05-16T02:11:24.588Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-16T02:11:24.588Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "rules.yml",
               "DocumentMoniker": "C:\\Users\\kalawson\\Documents\\GitHub\\pro290-s2-project\\Rasa\\data\\rules.yml",
               "RelativeDocumentMoniker": "Rasa\\data\\rules.yml",
               "ToolTip": "C:\\Users\\kalawson\\Documents\\GitHub\\pro290-s2-project\\Rasa\\data\\rules.yml",
               "RelativeToolTip": "Rasa\\data\\rules.yml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
               "WhenOpened": "2024-05-16T02:10:20.411Z",
               "EditorCaption": ""
@@ -81,8 +79,7 @@
               "RelativeToolTip": "Rasa\\data\\nlu.yml",
               "ViewState": "AQIAAD8AAAAAAAAAAAAAAFcAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2024-05-16T02:10:05.253Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-16T02:10:05.253Z"
             }
           ]
         }

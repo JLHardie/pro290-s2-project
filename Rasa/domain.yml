@@ -28,6 +28,9 @@ responses:
 
   utter_check:
   - text: "I am alive!"
+  
+  utter_welcome_message:
+  - text: "Hello! I am Byte, how may I help you today?"  
 
 session_config:
   session_expiration_time: 60
