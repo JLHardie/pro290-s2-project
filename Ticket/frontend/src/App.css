@@ -16,7 +16,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #5a3e79;
+  background-color: #48576b;
   width: 100%
 }
 
@@ -32,7 +32,7 @@ li a {
 }
 
 li:hover {
-  background-color: #c197d2;
+  background-color: #4682b4;
 }
 
 .list1 {
@@ -52,35 +52,19 @@ li:hover {
 
 .left {
   left: 0;
-  background-color: #3a5673;
+  background-color: #f5f5f5;
 }
 
 .right {
   right: 0;
-  background-color: #4297a0;
-}
-
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.centered button {
-  background-color: #a98ab0;
-  color: #f3e3e2;
-  font-size: 35px;
-}
-
-.centered button:hover {
-  background-color: #a98ab0;
+  background-color: #f5f5f5;
 }
 
 .ticket {
-  background-color: #4297a0;
-  color: #f3e3e2;
+  margin-top: 5%;
+  background-color: #94a7ba;
+  border-color: #001f3f;
+  color: #fff;
   width: 20%;
   text-align: center;
   border-radius: 15%;
@@ -89,10 +73,37 @@ li:hover {
   padding-right: 10%;
 }
 
-#ticket1 {
+.ticket:hover {
+  background-color: #001f3f;
+}
+
+#create {
   margin-top: 10%;
+  background-color: #a98ab0;
+  border-color: #7d4b6a;
+  color: #fff;
+  width: 40%;
+  text-align: center;
+  margin-left: 30%;
+  padding: 3% 10% 3% 10%;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+#create:hover {
+  background-color: #7d4b6a;
 }
 
 .ticketDesc {
-  color: #f3e3e2;
+  background-color: #a98ab0;
+  border-color: #7d4b6a;
+  color: #fff;
+  margin-top: 10%;
+  width:85%;
+  text-align: center;
+  padding: 3% 3% 3% 3%;
+}
+
+p {
+  font-size: 20px;
 }

@@ -1,6 +1,6 @@
 body {
-  background: #3a5673;
-  color: #f3e3e2;
+  background: #f5f5f5;
+  color: #001f3f;
   text-align: center;
 }
 
@@ -22,7 +22,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #5a3e79;
+  background-color: #48576b;
   width: 100%
 }
 
@@ -38,7 +38,7 @@ li a {
 }
 
 li:hover {
-  background-color: #c197d2;
+  background-color: #4682b4;
 }
 
 .list1 {
@@ -55,9 +55,9 @@ label {
 }
 
 input {
-  background-color: #4297a0;
-  border-color: #4297a0;
-  color: #f3e3e2;
+  background-color: #94a7ba;
+  border-color: #001f3f;
+  color: #fff;
   font-size: 30px;
 }
 
@@ -66,7 +66,12 @@ p {
 }
 
 button {
-  background-color: #a98ab0;
-  color: #f3e3e2;
+  background-color: #c08497;
+  border-color: #7d4b6a;
+  color: #fff;
   font-size: 20px;
+}
+
+button:hover {
+  background-color: #7d4b6a;
 }
