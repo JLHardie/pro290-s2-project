@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const AddToCartButton = ({item}) => {
+const AddToCartButton = ({item, setCartCount}) => {
     const [isLoading, setLoading] = useState(false)
 
     async function addItemToCart(){
@@ -13,10 +13,11 @@ const AddToCartButton = ({item}) => {
                 headers: {"Content-type": "application/json"},
                 body: JSON.stringify(item)
             })
+            let json = await response.json()
             if (cartId === "/new"){
-                let json = await response.json()
                 localStorage.setItem("cartId", json.body.cartId)
             }
+            setCartCount(json.body.items.length)
         } catch (err) {
             console.error(`Error fetching data: ${err}`)
         } finally {

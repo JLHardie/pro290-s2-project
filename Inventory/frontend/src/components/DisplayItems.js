@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AddToCartButton from "./AddToCart";
 
-const ShowInventory = () => {
+const ShowInventory = ({setCartCount}) => {
     const [isLoading, setLoading] = useState(true)
     const [data, setData] = useState([])
 
@@ -15,7 +15,7 @@ const ShowInventory = () => {
                     Description: {item.description}<br />
                     Price: {item.price}<br />
                     Category: {item.category}<br />
-                    <AddToCartButton item={item}/>
+                    <AddToCartButton item={item} setCartCount={setCartCount}/>
                 </td>
             )
             setData(listItems)
@@ -29,7 +29,7 @@ const ShowInventory = () => {
 
     useEffect(() => {
         getItems()
-    }, [])
+    })
     return (
         <div>
             {isLoading ? (
