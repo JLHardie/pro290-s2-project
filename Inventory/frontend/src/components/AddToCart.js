@@ -26,7 +26,7 @@ const AddToCartButton = ({item}) => {
     return (
         <>
             <button onClick={addItemToCart} disabled={isLoading}>
-                {isLoading ? "Adding..." : "Add To Cart"}
+                Add To Cart
             </button>
         </>
     )

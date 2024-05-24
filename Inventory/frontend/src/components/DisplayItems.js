@@ -10,13 +10,13 @@ const ShowInventory = () => {
             const response = await fetch('http://localhost:8080/inventoryService')
             const json = await response.json()
             const listItems = json.map(item => 
-                <li key={item.itemId}>
+                <td key={item.itemId}>
                     Title: {item.title} <br />
                     Description: {item.description}<br />
                     Price: {item.price}<br />
                     Category: {item.category}<br />
                     <AddToCartButton item={item}/>
-                </li>
+                </td>
             )
             setData(listItems)
             console.log(json)
@@ -39,7 +39,7 @@ const ShowInventory = () => {
                     <p>
                         successfully got {data ? data.length : 0} items from the inventory.
                     </p>
-                    <ul>{data}</ul>
+                    <table>{data}</table>
                 </>
             )}
         </div>
