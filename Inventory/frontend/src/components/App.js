@@ -1,8 +1,11 @@
-import './App.css';
+import '../css/App.css';
+import React, {Suspense} from 'react';
+
+import ShowInventory from './DisplayItems';
 
 function App() {
   return (
-    <body>
+    <>
       <header>
         <nav>
             <ul>
@@ -17,6 +20,9 @@ function App() {
       </header>
       <main>
         <h1>Inventory</h1>
+        <Suspense fallback={<p>Loading...</p>}>
+          <ShowInventory />
+        </Suspense>
         <table id="itemTable">
           {/* <tr>
             <td></td>
@@ -27,7 +33,7 @@ function App() {
           </tr> */}
       </table>
       </main>
-    </body>
+    </>
   );
 }
 
