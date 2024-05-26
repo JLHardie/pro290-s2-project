@@ -15,4 +15,4 @@ rules:
 - rule:
   conversation_start: true
   steps:
-  - utter_welcome_message  
+  - action: utter_welcome_message  
