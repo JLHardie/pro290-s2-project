@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import AddToCartButton from "./AddToCart";
 
-const ShowInventory = ({setCartId, setCartCount}) => {
+const ShowInventory = ({ setCartCount}) => {
     const [isLoading, setLoading] = useState(true)
     const [data, setData] = useState([])
-    const [retry2, setRetry] = useState([])
-    let retry = []
+    const [retry, setRetry] = useState([0])
+    
     const getItems = async () =>{
         try {
             const response = await fetch('http://localhost:8080/inventoryService')
             if (response.status !== 200) {
-                
+                retry[0]++ 
                 return
             }
             const json = await response.json()
@@ -20,14 +20,12 @@ const ShowInventory = ({setCartId, setCartCount}) => {
                     Description: {item.description}<br />
                     Price: {item.price}<br />
                     Category: {item.category}<br />
-                    <AddToCartButton item={item} setCartCount={setCartCount} setCartId={setCartId}/>
+                    <AddToCartButton item={item} setCartCount={setCartCount}/>
                 </td>
             )
-            retry = []
             setData(listItems)
-            console.log(listItems)
         } catch (err){
-            
+            retry[0]++ 
             console.error(err)
         } finally {
             setLoading(false)

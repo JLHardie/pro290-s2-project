@@ -75,7 +75,7 @@ public class CartRestController {
 
     public void RemoveItemsFromCartById(LinkedList<Item> items, UUID itemId) {
         for (int i = items.size() - 1; i >= 0; i--) {
-            if (items.get(i).getItemId() == itemId) {
+            if (items.get(i).getItemId().equals(itemId)) {
                 items.remove(i);
             }
         }
@@ -100,6 +100,7 @@ public class CartRestController {
     }
 
     public void AddItemToCart(Cart cart, Item item, int increment) {
+        
         for (int count = 0; count < increment; count++) {
             cart.getItems().add(item);
         }
@@ -136,14 +137,14 @@ public class CartRestController {
 
 
     public void RemoveItemFromCart(Cart cart, Item item, int decrement){
+        decrement = decrement < 0 ? decrement * -1 : decrement;
         int removed = 0;
         LinkedList<Item> items = cart.getItems();
-        for (int index = items.size() - 1; index >= 0; index--) {
+        for (int index = items.size() - 1; index >= 0 && removed != decrement; index--) {
             if (items.get(index).getItemId().equals(item.getItemId())){
                 items.remove(index);
                 removed++;
             }
-            if (removed == decrement) return;
         }
     }
 
