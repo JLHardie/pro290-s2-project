@@ -1,6 +1,10 @@
 import './App.css';
+import React, { useEffect, useState } from "react";
+import DisplayCart from './components/DisplayCart'
 
 function App() {
+  const [total, setTotal] = useState(0)
+
   return (
     <body>
       <header>
@@ -16,17 +20,20 @@ function App() {
         </nav>
       </header>
       <main>
-        <h3 id="mar">Item : Price</h3>
-        <h3>Item : Price</h3>
-        <h3>Item : Price</h3>
-        <h3>Item : Price</h3>
+        <div id='mar'>
+        <DisplayCart setTotal={setTotal}/>
+        </div>
 
-        <button>Checkout</button>
+        <button onClick={GoToCheckout}>Checkout</button>
 
-        <h4>Total : $$$</h4>
+        <h4>Total : {total}</h4>
       </main>
     </body>
   );
+}
+
+function GoToCheckout(){
+  window.location.href = "http://localhost:3003"
 }
 
 export default App;
