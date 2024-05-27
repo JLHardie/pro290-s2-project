@@ -89,3 +89,108 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+- intent: repair_cost
+  examples: |
+    - how much will it cost to repair my computer?
+    - what's the repair cost?
+    - how much to fix my computer?
+    - what's the price for repairs?
+
+- intent: repair_duration
+  examples: |
+    - how long will the repair take?
+    - when will my computer be ready?
+    - what's the repair time?
+    - how long does a typical repair take?
+
+- intent: diagnostic_charge
+  examples: |
+    - is there a diagnostic fee?
+    - do you charge to check my computer?
+    - is the diagnostic free?
+    - do you charge for diagnostics?
+
+- intent: repair_warranty
+  examples: |
+    - is there a warranty on your repair services?
+    - do repairs come with a warranty?
+    - is there a repair warranty?
+    - how long is the warranty?
+
+- intent: safe_data
+  examples: |
+    - will my data be safe during the repair?
+    - is my data safe?
+    - will my files be okay?
+    - can you protect my data?
+
+- intent: recover_data
+  examples: |
+    - can you recover lost data?
+    - can you get back my data?
+    - do you do data recovery?
+    - can you find my lost files?
+
+- intent: site_repairs
+  examples: |
+    - do you provide on-site repair services?
+    - do you come to my house?
+    - is on-site repair available?
+    - can you fix it at my place?
+
+- intent: repair_details
+  examples: |
+    - which brands and models do you repair?
+    - what brands do you fix?
+    - do you repair all computers?
+    - what models do you work on?
+
+- intent: prepare_computer
+  examples: |
+    - how should i prepare my computer before bringing it in?
+    - what should i do before bringing my computer?
+    - how do i prepare my computer?
+    - what to do before i bring it in?
+
+- intent: type_parts
+  examples: |
+    - which brands and models do you repair?
+    - are the parts new?
+    - do you use refurbished parts?
+    - what kind of parts do you use?
+
+- intent: contact_hours
+  examples: |
+    - what are your store hours and how can i contact you?
+    - when are you open?
+    - what are your hours?
+    - how do i contact you?
+
+- intent: current_discounts
+  examples: |
+    - are there any current discounts or promotions?
+    - any discounts right now?
+    - do you have any deals?
+    - are there any promotions?
+
+- intent: troubleshooting_support
+  examples: |
+    - do you offer software troubleshooting and support?
+    - can you fix software problems?
+    - do you help with software?
+    - do you troubleshoot software?
+
+- intent: prevent_issues
+  examples: |
+    - how can i prevent future issues with my computer?
+    - how do i avoid problems?
+    - how to keep my computer running well?
+    - any tips to prevent issues?
+
+- intent: fee_fixed
+  examples: |
+    - is there a fee if my computer can't be fixed?
+    - do i pay if you can't fix it?
+    - is there a charge if it's not fixed?
+    - any fee if the repair fails?

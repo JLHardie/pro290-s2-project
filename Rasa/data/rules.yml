@@ -12,7 +12,82 @@ rules:
   - intent: bot_challenge
   - action: utter_check
 
-- rule:
+- rule: Say hi first and introduce yourself
   conversation_start: true
   steps:
-  - utter_welcome_message  
+  - action: utter_welcome_message  
+
+- rule: Say an estimated cost anytime the user asks for a cost
+  steps:
+  - intent: repair_cost
+  - action: utter_repair_cost
+
+- rule: Say an estimated repair duration anytime the user asks for one
+  steps:
+  - intent: repair_duration
+  - action: utter_repair_duration
+
+- rule: Say the cost of a diagnostic fee anytime a user asks
+  steps:
+  - intent: diagnostic_charge
+  - action: utter_diagnostic_charge
+
+- rule: Say a yes anytime a user asks if there is a warranty
+  steps:
+  - intent: repair_warranty
+  - action: utter_repair_warranty
+
+- rule: Say some reassuring answers anytime a user asks this
+  steps:
+  - intent: safe_data
+  - action: utter_safe_data
+
+- rule: Say some advice for user about data anytime a user asks
+  steps:
+  - intent: recover_data
+  - action: utter_recover_data
+
+- rule: Say no anytime a user asks
+  steps:
+  - intent: site_repairs
+  - action: utter_site_repairs
+
+- rule: Say a list of items we accept anytime a user asks
+  steps:
+  - intent: repair_details
+  - action: utter_repair_details
+
+- rule: Say how the user should prepare their computer anytime a user asks
+  steps:
+  - intent: prepare_computer
+  - action: utter_prepare_computer
+
+- rule: Say the type of parts anytime a user asks
+  steps:
+  - intent: type_parts
+  - action: utter_type_parts
+
+- rule: Say the store hours and contact info anytime a user asks
+  steps:
+  - intent: contact_hours
+  - action: utter_contact_hours
+
+- rule: Say no anytime the user asks for one
+  steps:
+  - intent: current_discounts
+  - action: utter_current_discounts
+
+- rule: Say an estimated cost anytime the user asks for a cost
+  steps:
+  - intent: troubleshooting_support
+  - action: utter_troubleshooting_support
+
+- rule: Say an estimated repair duration anytime the user asks for one
+  steps:
+  - intent: prevent_issues
+  - action: utter_prevent_issues
+
+- rule: Say the cost of a diagnostic fee anytime a user asks
+  steps:
+  - intent: fee_fixed
+  - action: utter_fee_fixed
