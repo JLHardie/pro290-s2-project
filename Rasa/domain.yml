@@ -8,6 +8,21 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - repair_cost
+  - repair_duration
+  - diagnostic_charge
+  - repair_warranty
+  - safe_data
+  - recover_data
+  - site_repairs
+  - repair_details
+  - prepare_computer
+  - type_parts
+  - contact_hours
+  - current_discounts
+  - troubleshooting_support
+  - prevent_issues
+  - fee_fixed
 
 responses:
   utter_greet:
@@ -32,6 +47,51 @@ responses:
   utter_welcome_message:
   - text: "Hello! I am Byte, how may I help you today?"  
 
+  utter_repair_cost:
+  - text: "Typical repairs range from $100 to $300, but we need to diagnose the issue first."  
+
+  utter_repair_duration:
+  - text: "Most repairs are completed within 1-3 business days."
+
+  utter_diagnostic_charge:
+  - text: "We offer a free diagnostic service for basic issues. Otherwise, it's $25."
+
+  utter_repair_warranty:
+  - text: "Yes, we stand by our work with a 3-month warranty."
+
+  utter_safe_data:
+  - text: "We take data safety very seriously and will do our best to protect your data. But it's always a good idea to back up your data before bringing your computer in."
+
+  utter_recover_data:
+  - text: "Data recovery success depends on the condition of the hard drive."
+
+  utter_site_repairs:
+  - text: "We do not provide on-site services, please come to out store."
+
+  utter_repair_details:
+  - text: "We repair all major brands including Apple, Dell, HP, Lenovo, and more."
+
+  utter_prepare_computer:
+  - text: "If possible, provide a brief description of the issue you're experiencing. Back up any important data and remove any personal items/accessories."
+
+  utter_type_parts:
+  - text: "In some cases, we may use refurbished parts with your consent. All parts used are thoroughly tested for quality."
+
+  utter_contact_hours:
+  - text: "Our store hours are Monday to Friday, 9 AM to 6 PM, and Saturday, 10 AM to 4 PM. You can contact us at (555) 123-4567 or email us at support@computerrepair.com."
+
+  utter_current_discounts:
+  - text: "We do not provide discounts or promotions."
+
+  utter_troubleshooting_support:
+  - text: "Yes, we provide software troubleshooting and support services."
+
+  utter_prevent_issues:
+  - text: "Regular maintenance and software updates can help prevent issues and avoid downloading unknown software"
+
+  utter_fee_fixed:
+  - text: "The diagnostic fee still applies even if the computer can't be fixed. If we can't fix it, we may offer to help you find a replacement."
+  
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
