@@ -43,7 +43,7 @@ function CheckoutButton({cartCount}){
     }
   }
   return (
-    <button onClick={GoToCheckout} disabled={cartCount <= 0}>Checkout</button>
+    <button style={{"margin-left": "40%"}} onClick={GoToCheckout} disabled={cartCount <= 0}>Checkout</button>
   )
 }
 

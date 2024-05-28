@@ -9,7 +9,11 @@ nav * {
 
 header {
   font-size: 30px;
-  margin-top: 0;
+
+}
+
+table {
+  margin-top: 10%;
 }
 
 ul {
@@ -38,7 +42,7 @@ li:hover {
   background-color: #4682b4;
 }
 
-#mar {
+#space {
   margin-top: 100px;
 }
 
@@ -60,7 +64,7 @@ button {
   color: #fff;
   width: 20%;
   text-align: center;
-  margin-left: 40%;
+  margin-left: 3%;
   padding: 1% 5% 1% 5%;
   cursor: pointer;
   font-size: 25px;

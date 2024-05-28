@@ -23,7 +23,7 @@ function App() {
         </nav>
       </header>
       <main>
-        <h1>Inventory</h1>
+        <h1 id="space">Inventory</h1>
         <Suspense fallback={<p>Loading...</p>}>
           <ShowInventory setCartCount={setCartCount}/>
         </Suspense>

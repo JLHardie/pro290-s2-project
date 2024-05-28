@@ -190,6 +190,26 @@ services:
       - TicketServiceAPI
       - OrderServiceAPI
 
+  ###    CHAT SERVICES    ###
+  ChatFrontend:
+    build: ./Chat
+    image: chatfrontend
+    restart: always
+    ports:
+      - 3004:80
+    networks:
+      - ComputerRepairNetwork
+    depends_on:
+      - API-Gateway
+      - RASA
+
+  RASA:
+    build: ./Rasa
+    image: rasabot
+    ports: 
+      - 5005:5005
+    networks:
+      - ComputerRepairNetwork
 networks:
   ComputerRepairNetwork: {}
 volumes:
