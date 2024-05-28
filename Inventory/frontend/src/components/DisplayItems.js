@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from "react";
 import AddToCartButton from "./AddToCart";
 
-const ShowInventory = ({setCartCount}) => {
+const ShowInventory = ({ setCartCount}) => {
     const [isLoading, setLoading] = useState(true)
     const [data, setData] = useState([])
-
+    const [retry, setRetry] = useState([0])
+    
     const getItems = async () =>{
         try {
             const response = await fetch('http://localhost:8080/inventoryService')
+            if (response.status !== 200) {
+                retry[0]++ 
+                return
+            }
             const json = await response.json()
             const listItems = json.map(item => 
                 <td key={item.itemId}>
@@ -19,8 +24,8 @@ const ShowInventory = ({setCartCount}) => {
                 </td>
             )
             setData(listItems)
-            console.log(json)
         } catch (err){
+            retry[0]++ 
             console.error(err)
         } finally {
             setLoading(false)
@@ -29,7 +34,7 @@ const ShowInventory = ({setCartCount}) => {
 
     useEffect(() => {
         getItems()
-    })
+    }, retry)
     return (
         <div>
             {isLoading ? (

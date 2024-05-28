@@ -1,5 +1,8 @@
 version: '3.8'
 services:
+
+####    INVENTORY SERVICES    ####
+
   InventoryServiceMongoDB:
     image: mongo:latest
     restart: always
@@ -19,7 +22,23 @@ services:
     depends_on:
       - InventoryServiceMongoDB
       - EurekaRegistry
-    
+    deploy:
+      mode: replicated
+      replicas: 3
+
+  InventoryFrontend:
+    build: ./Inventory/frontend
+    image: inventoryfrontend
+    restart: always
+    ports:
+      - 3001:80
+    networks:
+      - ComputerRepairNetwork
+    depends_on:
+      - API-Gateway
+
+####    CART SERVICES    ####
+
   CartServiceRedisDB:
     image: redis:latest
     restart: always
@@ -33,12 +52,28 @@ services:
     image: cartserviceapi
     restart: always
     ports:
-      - 8081:8080
+      - "8080"
     networks:
       - ComputerRepairNetwork
     depends_on:
       - CartServiceRedisDB
       - EurekaRegistry
+    deploy:
+      mode: replicated
+      replicas: 3
+
+  CartFrontend:
+    build: ./Cart/frontend
+    image: cartfrontend
+    restart: always
+    ports:
+      - 3002:80
+    networks:
+      - ComputerRepairNetwork
+    depends_on:
+      - API-Gateway
+
+####    SQL SERVER    ####
 
   RepairStoreSQLDB:
     build: ./SQL Server
@@ -51,6 +86,8 @@ services:
     volumes:
       - sql-storage:/var/opt/mssql
     
+####    USER SERVICES    ####
+
   UserServiceAPI:
     build: ./User/backend/UserService
     image: userserviceapi
@@ -62,6 +99,19 @@ services:
     depends_on:
       - RepairStoreSQLDB
       - EurekaRegistry
+
+  UserFrontend:
+    build: ./User/frontend
+    image: userfrontend
+    restart: always
+    ports:
+      - 3006:80
+    networks:
+      - ComputerRepairNetwork
+    depends_on:
+      - API-Gateway
+
+####    ORDER SERVICES    ####
 
   OrderServiceAPI:
     build: ./Order/backend/OrderService
@@ -75,6 +125,19 @@ services:
       - RepairStoreSQLDB
       - EurekaRegistry
 
+  OrderFrontend:
+    build: ./Order/frontend
+    image: orderfrontend
+    restart: always
+    ports:
+      - 3003:80
+    networks:
+      - ComputerRepairNetwork
+    depends_on:
+      - API-Gateway
+
+####    TICKET SERVICES    ####
+
   TicketServiceAPI:
     build: ./Ticket/backend/PRO290TicketServiceAPI
     image: ticketserviceapi
@@ -87,6 +150,19 @@ services:
       - RepairStoreSQLDB
       - EurekaRegistry
 
+####    HOME FRONTEND    ####
+  HomeFrontend:
+    build: ./Home
+    image: homefrontend
+    restart: always
+    ports:
+      - 3000:80
+    networks:
+      - ComputerRepairNetwork
+    depends_on:
+      - API-Gateway
+
+####    GENERAL SERVICES    ####
   EurekaRegistry:
     container_name: EurekaRegistry
     image: steeltoeoss/eureka-server:latest

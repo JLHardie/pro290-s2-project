@@ -30,9 +30,7 @@ public class SecurityConfiguration {
         AuthenticationManagerBuilder authenticationManagerBuilder = http.getSharedObject(AuthenticationManagerBuilder.class);
         authenticationManagerBuilder.authenticationProvider(authenticationProvider);
         http.authorizeHttpRequests((a) -> a
-                .requestMatchers(GET, "/**").permitAll()
                 .requestMatchers(POST, "/**").permitAll()
-                .requestMatchers(PUT, "/**").permitAll()
                 .anyRequest().authenticated()
         ).httpBasic(Customizer.withDefaults());
         http.sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS));

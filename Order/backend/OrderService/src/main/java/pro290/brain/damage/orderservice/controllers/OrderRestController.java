@@ -37,7 +37,7 @@ public class OrderRestController {
     }
 
     @PostMapping(path = "/{userId}")
-    public ApiResponse CreateOrder(@PathVariable UUID userId, @RequestBody OrderCreationDTO orderDTO){
+    public ApiResponse CreateOrder(HttpServletResponse resp, @PathVariable UUID userId, @RequestBody OrderCreationDTO orderDTO){
         if (LocalDate.now().isBefore(orderDTO.payment.getExpirationDate())) {
             Order order = new Order();
             UUID orderId = UUID.randomUUID();
@@ -47,8 +47,10 @@ public class OrderRestController {
 //            order.setItems(items);
             order.setCreateDate(LocalDate.now());
             itemRepository.AddListOfItems(items, order);
+            resp.setStatus(201);
             return new ApiResponse(true, "Order created.", order);
         }
+        resp.setStatus(409);
         return new ApiResponse(false, "Payment expired.", null);
     }
 

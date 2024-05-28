@@ -2,28 +2,11 @@ import '../css/App.css';
 import React, {Suspense, useEffect, useState} from 'react';
 
 import ShowInventory from './DisplayItems';
+import CartLink from './CartLink';
+import LoginLink from './LoginLink';
 
 function App() {
   const [cartCount, setCartCount] = useState(0)
-  
-  const getCartCount = async () => { 
-    const cartId = localStorage.getItem('cartId')
-    if (cartId){
-      const response = await fetch(`http://localhost:8080/cartService/${cartId}`)
-      const json = await response.json()   
-        
-      setCartCount(json.body.items.length)
-        
-      
-    } else {
-      setCartCount(0)
-    }
-  }
-  
-  useEffect(() => {
-    getCartCount()
-  })
-
   return (
     <>
       <header>
@@ -33,8 +16,9 @@ function App() {
                 <li id="list2"><a href="http://localhost:3001/" style={{color: "#f3e3e2"}}>Inventory</a></li>
                 <li id="list3"><a href="http://localhost:3004/" style={{color: "#f3e3e2"}}>Chat</a></li>
                 <li id="list4"><a href="http://localhost:3005/" style={{color: "#f3e3e2"}}>Ticket</a></li>
-                <li id="list5" style={{float: "right"}}><a href="http://localhost:3006/" style={{color: "#f3e3e2"}}>Profile</a></li>
-                <li id="list6" style={{float: "right"}}><a href="http://localhost:3002/" style={{color: "#f3e3e2"}}>Cart {cartCount}</a></li>
+                <LoginLink />
+                <CartLink setCartCount={setCartCount} cartCount={cartCount}/>
+                
             </ul>
         </nav>
       </header>
@@ -43,15 +27,6 @@ function App() {
         <Suspense fallback={<p>Loading...</p>}>
           <ShowInventory setCartCount={setCartCount}/>
         </Suspense>
-        <table id="itemTable">
-          {/* <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr> */}
-      </table>
       </main>
     </>
   );

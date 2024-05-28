@@ -26,7 +26,7 @@ public class GatewayConfig {
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
         config.setAllowedOriginPatterns(List.of("*"));
-        config.setAllowedMethods(Arrays.asList("GET", "POST", "DELETE", "PUT"));
+        config.setAllowedMethods(Arrays.asList("GET", "POST", "DELETE", "PUT", "PATCH"));
         config.setAllowedHeaders(List.of("*"));
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource(new PathPatternParser());
