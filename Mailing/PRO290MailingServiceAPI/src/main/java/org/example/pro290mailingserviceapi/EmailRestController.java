@@ -16,6 +16,6 @@ public class EmailRestController {
 
     @PostMapping("")
     public void sendEmail(@RequestBody EmailDetails emailDetails) {
-        emailService.sendEmail(emailDetails);
+        emailService.produceEmailMessage(emailDetails);
     }
 }
