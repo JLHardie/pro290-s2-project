@@ -34,7 +34,7 @@ public class UserRestController {
     @GetMapping(path = "/login")
     @ResponseStatus(HttpStatus.OK)
     public void Login(){
-        
+
     }
 
     @PostMapping(path = "")

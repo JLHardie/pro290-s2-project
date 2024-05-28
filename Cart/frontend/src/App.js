@@ -1,9 +1,11 @@
 import './App.css';
 import React, { useEffect, useState } from "react";
 import DisplayCart from './components/DisplayCart'
+import CartLink from './components/CartLink';
 
 function App() {
   const [total, setTotal] = useState(0)
+  const [cartCount, setCartCount] = useState(0)
 
   return (
     <body>
@@ -15,7 +17,7 @@ function App() {
                 <li id="list3"><a href="http://localhost:3004/" style={{color: "#f3e3e2"}}>Chat</a></li>
                 <li id="list4"><a href="http://localhost:3005/" style={{color: "#f3e3e2"}}>Ticket</a></li>
                 <li id="list5" style={{float: "right"}}><a href="http://localhost:3006/" style={{color: "#f3e3e2"}}>Profile</a></li>
-                <li id="list6" style={{float: "right"}}><a href="http://localhost:3002/" style={{color: "#f3e3e2"}}>Cart</a></li>
+                <CartLink cartCount={cartCount} setCartCount={setCartCount}/>
             </ul>
         </nav>
       </header>
@@ -24,7 +26,7 @@ function App() {
         <DisplayCart setTotal={setTotal}/>
         </div>
 
-        <button onClick={GoToCheckout}>Checkout</button>
+        <CheckoutButton cartCount={cartCount}/>
 
         <h4>Total : {total}</h4>
       </main>
@@ -32,8 +34,16 @@ function App() {
   );
 }
 
-function GoToCheckout(){
-  window.location.href = "http://localhost:3003"
+function CheckoutButton({cartCount}){
+
+  const GoToCheckout = () => {
+    if (cartCount > 0){
+      window.location.href = "http://localhost:3003"
+    }
+  }
+  return (
+    <button onClick={GoToCheckout} disabled={cartCount <= 0}>Checkout</button>
+  )
 }
 
 export default App;
