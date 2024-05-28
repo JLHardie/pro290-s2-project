@@ -22,6 +22,9 @@ services:
     depends_on:
       - InventoryServiceMongoDB
       - EurekaRegistry
+    deploy:
+      mode: replicated
+      replicas: 3
 
   InventoryFrontend:
     build: ./Inventory/frontend
@@ -49,12 +52,15 @@ services:
     image: cartserviceapi
     restart: always
     ports:
-      - 8081:8080
+      - "8080"
     networks:
       - ComputerRepairNetwork
     depends_on:
       - CartServiceRedisDB
       - EurekaRegistry
+    deploy:
+      mode: replicated
+      replicas: 3
 
   CartFrontend:
     build: ./Cart/frontend
@@ -119,6 +125,17 @@ services:
       - RepairStoreSQLDB
       - EurekaRegistry
 
+  OrderFrontend:
+    build: ./Order/frontend
+    image: orderfrontend
+    restart: always
+    ports:
+      - 3003:80
+    networks:
+      - ComputerRepairNetwork
+    depends_on:
+      - API-Gateway
+
 ####    TICKET SERVICES    ####
 
   TicketServiceAPI:
@@ -132,6 +149,18 @@ services:
     depends_on:
       - RepairStoreSQLDB
       - EurekaRegistry
+
+####    HOME FRONTEND    ####
+  HomeFrontend:
+    build: ./Home
+    image: homefrontend
+    restart: always
+    ports:
+      - 3000:80
+    networks:
+      - ComputerRepairNetwork
+    depends_on:
+      - API-Gateway
 
 ####    GENERAL SERVICES    ####
   EurekaRegistry:

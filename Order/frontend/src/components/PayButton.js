@@ -16,6 +16,13 @@ function PayButton({setOrderPlaced}) {
             const cartId = getCookie('cartId')
             const userId = getCookie('userId')
             const auth = getCookie('auth')
+            if (!cartId) {
+                document.getElementById('message').textContent = "Your cart is empty."
+            }
+            if (!userId) {
+                document.getElementById('message').textContent = "You need to login before placing your order."
+                return
+            }
             let cardNumber = document.getElementById('number').value
             let cvv = document.getElementById('cvv').value
             let expiration = document.getElementById('expiration').value
