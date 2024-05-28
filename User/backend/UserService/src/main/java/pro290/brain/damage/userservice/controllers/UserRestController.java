@@ -31,6 +31,12 @@ public class UserRestController {
         return "this is a test, you are in a test, you are the test";
     }
 
+    @GetMapping(path = "/login")
+    @ResponseStatus(HttpStatus.OK)
+    public void Login(){
+        
+    }
+
     @PostMapping(path = "")
     public ApiResponse CreateUser(HttpServletResponse resp, @RequestBody Users user) {
         try {
