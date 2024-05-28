@@ -37,7 +37,7 @@ function LoginButton(){
         )
         if (response.status === 200) {
             document.cookie = `auth=${auth}`
-            let user = response.json()
+            let user = await response.json()
             document.cookie = `userId=${user.userId}`
             window.location.href = 'http://localhost:3000'
         } else {
