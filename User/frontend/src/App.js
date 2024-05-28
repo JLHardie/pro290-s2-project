@@ -1,20 +1,26 @@
 import './App.css';
+import React, { useState } from 'react'
+import SignupScreen from './components/SignupScreen';
+import LoginScreen from './components/LoginScreen';
+
 
 function App() {
+  const [isLogin, setLogin] = useState(true)
+  
+  function SwapScreens() {
+    setLogin(!isLogin)
+  }
+
   return (
     <body>
-      <h1>Login</h1>
-        <label>Username: </label><br/>
-        <input type="text" style={{width: "30%", height:"40px"}} id="username"/>
-        <br/><br/>
-        <label>Password: </label><br/>
-        <input type="text" style={{width: "30%", height:"40px"}} id="password"/>
-        <br/><br/>
-        <button onclick="verify();" style={{width: "10%", height:"40px"}}>Log In</button>
-        <p>Or</p>
-        <a href="pages/signUp.html"><button style={{width: "10%", height:"40px"}}>Sign Up</button></a>
+      {isLogin ? 
+      (<LoginScreen SwapScreens={SwapScreens}/>) :
+      (<SignupScreen SwapScreens={SwapScreens} />)
+      }
     </body>
   );
 }
 
 export default App;
+
+
