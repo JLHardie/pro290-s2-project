@@ -150,6 +150,17 @@ services:
       - RepairStoreSQLDB
       - EurekaRegistry
 
+  TicketFrontend:
+    build: ./Ticket/frontend
+    image: ticketfrontend
+    restart: always
+    ports:
+      - 3005:80
+    networks:
+      - ComputerRepairNetwork
+    depends_on:
+      - API-Gateway
+
 ####    HOME FRONTEND    ####
   HomeFrontend:
     build: ./Home
