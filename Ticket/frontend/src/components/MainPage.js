@@ -16,23 +16,23 @@ function MainPage({SwapCreateScreens, SwapEditScreens}) {
       </nav>
     </header>
     <main>
-      <div class="split left">
+      <div className="split left">
         <button id="create" onClick={SwapCreateScreens}>Create Ticket</button>
         <br />
-          <div class="ticket" id="ticket1">
+          <div className="ticket" id="ticket1">
             <h2>Ticket 1</h2>
             <h4>[insert issue here]</h4>
             <h4>[status]</h4>
           </div>
-          <div class="ticket" id="ticket2">
+          <div className="ticket" id="ticket2">
             <h2>Ticket 2</h2>
             <h4>[insert issue here]</h4>
             <h4>[status]</h4>
           </div>
       </div>
-      <div class="split right">
-        <div class="centered">
-          <div class="ticketDesc" id="desc1">
+      <div className="split right">
+        <div className="centered">
+          <div className="ticketDesc" id="desc1">
             <h1>[Issue Name]</h1>
             <h2>[status]</h2>
             <h2>[date]</h2>
