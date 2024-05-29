@@ -1,9 +1,8 @@
 import { useState } from "react"
 
-function EditTicket() {
+function EditTicket({SwapScreens}) {
     return (
         <div>
-          {showSecondForm && (
               <div className="popup">
                 <div className="popup-content">
                   <h2>Second Popup</h2>
@@ -19,7 +18,6 @@ function EditTicket() {
                   <button  onClick={SwapScreens}>Close</button>
                 </div>
               </div>
-          )}
       </div>
     );
 }

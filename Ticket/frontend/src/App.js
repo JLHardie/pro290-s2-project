@@ -1,13 +1,13 @@
-import React from 'react';
-import MainPage from './MainPage';
-import CreateTicket from './CreateTicket';
-import EditTicket from './EditTicket';
-import './App.css';
 import React, { useState } from 'react'
 
+import MainPage from './components/MainPage';
+import CreateTicket from './components/CreateTicket';
+import EditTicket from './components/EditTicket';
+import './App.css';
+
 function App() {
-  const [isCreate, setCreate] = useState(true)
-  const [isEdit, setEdit] = useState(true)
+  const [isCreate, setCreate] = useState(false)
+  const [isEdit, setEdit] = useState(false)
   
   function SwapCreateScreens() {
     setCreate(!isCreate)
@@ -20,13 +20,13 @@ function App() {
   return (
       <div className="App">
         {isCreate ? 
-          (<MainPage SwapScreens={SwapCreateScreens}/>) :
-          (<CreateTicket SwapScreens={SwapCreateScreens} />) 
+          (<CreateTicket SwapScreens={SwapCreateScreens} />) :
+          (<MainPage SwapCreateScreens={SwapCreateScreens} SwapEditScreens={SwapEditScreens}/>)
         }
 
         {isEdit ? 
-          (<MainPage SwapScreens={SwapEditScreens}/>) :
-          (<EditTicket SwapScreens={SwapEditScreens} />) 
+          (<EditTicket SwapScreens={SwapEditScreens} />) :
+          (<MainPage SwapCreateScreens={SwapCreateScreens} SwapEditScreens={SwapEditScreens}/>) 
         }
       </div>
   );

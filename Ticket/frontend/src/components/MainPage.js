@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function MainPage({SwapScreens}) {
+function MainPage({SwapCreateScreens, SwapEditScreens}) {
     return (
     <div>
       <header>
@@ -17,7 +17,7 @@ function MainPage({SwapScreens}) {
     </header>
     <main>
       <div class="split left">
-        <button id="create" onClick={SwapScreens}>Create Ticket</button>
+        <button id="create" onClick={SwapCreateScreens}>Create Ticket</button>
         <br />
           <div class="ticket" id="ticket1">
             <h2>Ticket 1</h2>
@@ -50,7 +50,7 @@ function MainPage({SwapScreens}) {
               massa vitae imperdiet. Curabitur vel eros quis urna 
               consectetur ultricies a at lorem. Aenean non ligula nibh.</p>
           </div>
-          <button id="edit" onClick={SwapScreens}>Edit Ticket</button>
+          <button id="edit" onClick={SwapEditScreens}>Edit Ticket</button>
         </div>
       </div>
     </main>
