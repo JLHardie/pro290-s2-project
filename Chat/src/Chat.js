@@ -80,11 +80,11 @@ const Chat = () => {
             <header>
                 <nav>
                     <ul className="navUl">
-                        <li><a href="http://localhost:3000/">Home</a></li>
-                        <li><a href="http://localhost:3001/">Inventory</a></li>
-                        <li><a href="http://localhost:3004/">Chat</a></li>
-                        <li style={{ float: 'right' }}><a href="http://localhost:3006/">Profile</a></li>
-                        <li style={{ float: 'right' }}><a href="http://localhost:3002/">Cart</a></li>
+                        <li id="list1"><a href="http://localhost:3000/" style={{color: "#f3e3e2"}}>Home</a></li>
+                        <li id="list2"><a href="http://localhost:3001/" style={{color: "#f3e3e2"}}>Inventory</a></li>
+                        <li id="list3"><a href="http://localhost:3004/" style={{color: "#f3e3e2"}}>Chat</a></li>
+                        <li id="list4"><a href="http://localhost:3005/" style={{color: "#f3e3e2"}}>Ticket</a></li>
+                        <li id="list6" style={{float: "right"}}><a href="http://localhost:3002/" style={{color: "#f3e3e2"}}>Cart</a></li>
                     </ul>
                 </nav>
             </header>
