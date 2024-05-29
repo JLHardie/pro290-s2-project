@@ -8,7 +8,9 @@ import './App.css';
 function App() {
   const [isCreate, setCreate] = useState(false)
   const [isEdit, setEdit] = useState(false)
-  
+  const [data, setData] = useState([])
+  const [item, setItem] = useState()
+
   function SwapCreateScreens() {
     setCreate(!isCreate)
   }
@@ -19,14 +21,15 @@ function App() {
 
   return (
       <div className="App">
+        (<MainPage setItem={setItem} item={item} setData={setData} data={data} SwapCreateScreens={SwapCreateScreens} SwapEditScreens={SwapEditScreens}/>)
         {isCreate ? 
-          (<CreateTicket SwapScreens={SwapCreateScreens} />) :
-          (<MainPage SwapCreateScreens={SwapCreateScreens} SwapEditScreens={SwapEditScreens}/>)
+          (<CreateTicket setItem={setItem} setData={setData} SwapScreens={SwapCreateScreens} />) :
+          <></>
         }
 
         {isEdit ? 
           (<EditTicket SwapScreens={SwapEditScreens} />) :
-          (<MainPage SwapCreateScreens={SwapCreateScreens} SwapEditScreens={SwapEditScreens}/>) 
+          <></>
         }
       </div>
   );
