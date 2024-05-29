@@ -47,11 +47,15 @@ li:hover {
 }
 
 p {
-  background-color: #c08497;
-  border-color: #7d4b6a;
+  color:#48576b;
   height: 330px;
   font-size: 22px;
   line-height: 1.8;
+}
+
+#start {
+  color:#48576b;
+  margin-top: 68px;
 }
 
 .split {

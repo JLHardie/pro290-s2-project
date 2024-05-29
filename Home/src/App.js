@@ -20,17 +20,25 @@ function App() {
         </nav>
       </header>
       <main>
-        <div class="split left">
-          <h1>Home</h1>
+        <div>
+          <h1 id="start">Welcome to TechPro Repair Solutions</h1>
           <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend viverra varius. Integer efficitur neque id libero lacinia 
-          fermentum. Nullam pulvinar suscipit neque sit amet eleifend. Donec sit amet pellentesque odio, nec lacinia arcu. Etiam dapibus 
-          accumsan dui, eget varius metus sodales quis. Curabitur lobortis sit amet metus sed sodales. Donec lacinia, nisi nec aliquam commodo, 
-          massa quam facilisis tellus, a interdum risus nunc at urna. Mauris rutrum magna in volutpat mollis.
-
-          Aliquam vehicula sed urna at rutrum. Vestibulum in risus congue leo congue placerat nec sit amet leo. Ut id lorem id est maximus tempor. 
-          Quisque facilisis libero erat. Sed porta nisl eget interdum vehicula. Nullam egestas metus eu orci tristique ornare. Phasellus augue libero, 
-          faucibus vel blandit quis, sagittis ut enim. Quisque neque augue, varius a leo sit amet, gravida fermentum tortor. Nunc tristique leo sed bibendum tempus.
+          Your One-Stop Shop for All Computer Repair Needs
+          At TechPro Repair Solutions, we understand how crucial your computer is to your daily life. 
+          Whether you use it for work, study, or entertainment, a malfunctioning device can be a significant 
+          disruption. That's why our team of certified technicians is dedicated to providing fast, reliable, 
+          and affordable repair services to get you back up and running in no time.
+          <br></br>
+          <b>Our Services</b><br></br>
+          <b>Comprehensive Diagnostics:</b> Not sure what's wrong with your computer? Our thorough diagnostic process will pinpoint the issue quickly and accurately.<br></br>
+          <b>Hardware Repair & Upgrades:</b> From replacing broken screens and faulty keyboards to upgrading your RAM and storage, we've got you covered.<br></br>
+          <b>Software Troubleshooting:</b> Whether it's a virus, malware, or a software glitch, our experts will clean up your system and ensure it runs smoothly.<br></br>
+          <b>Data Recovery:</b> Lost important files? Our data recovery services can retrieve your valuable data from damaged or corrupted drives.<br></br>
+          <b>Custom PC Builds:</b> Looking for a high-performance custom-built PC? We’ll design and assemble a machine that meets your specific needs and budget.<br></br>
+          <b>Network Setup & Security:</b> From home Wi-Fi setup to network security solutions, we ensure your online experience is fast and safe.<br></br>
+          <br></br>
+          <b>Address:</b> 123 Main Street, Tech City, TX 78901<br></br>
+          <b>Phone:</b> (123) 456-7890
           </p>
         </div>
         
