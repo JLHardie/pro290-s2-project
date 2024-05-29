@@ -1,0 +1,62 @@
+[
+    {
+        "title": "NVIDIA GeForce RTX 3080",
+        "description": "High-end graphics card for advanced gaming and graphics work.",
+        "price": 699.99,
+        "category": "Graphics Card"
+    },
+    {
+        "title": "AMD Radeon RX 6800 XT",
+        "description": "Powerful graphics card for 4K gaming and high-performance tasks.",
+        "price": 649.99,
+        "category": "Graphics Card"
+    },
+    {
+        "title": "NVIDIA GeForce RTX 3060 Ti",
+        "description": "Cost-effective card for excellent 1080p and 1440p gaming.",
+        "price": 399.99,
+        "category": "Graphics Card"
+    },
+    {
+        "title": "AMD Radeon RX 6700 XT",
+        "description": "Mid-range card ideal for high refresh rate gaming at 1440p.",
+        "price": 479.99,
+        "category": "Graphics Card"
+    },
+    {
+        "title": "NVIDIA GeForce GTX 1660 Super",
+        "description": "Budget-friendly option for mainstream gamers.",
+        "price": 229.99,
+        "category": "Graphics Card"
+    },
+    {
+        "title": "AMD Ryzen 9 5950X",
+        "description": "Top-tier CPU with 16 cores for gaming and professional use.",
+        "price": 799.99,
+        "category": "CPU"
+    },
+    {
+        "title": "Intel Core i9-11900K",
+        "description": "High-performance 8-core CPU optimized for gaming.",
+        "price": 539.99,
+        "category": "CPU"
+    },
+    {
+        "title": "AMD Ryzen 5 5600X",
+        "description": "Mid-range 6-core CPU ideal for gaming and multitasking.",
+        "price": 289.99,
+        "category": "CPU"
+    },
+    {
+        "title": "Intel Core i5-11600K",
+        "description": "6-core CPU with strong single-core performance for gaming.",
+        "price": 262.99,
+        "category": "CPU"
+    },
+    {
+        "title": "AMD Ryzen 7 5800X",
+        "description": "8-core CPU designed for high-performance gaming and apps.",
+        "price": 449.99,
+        "category": "CPU"
+    }
+]

@@ -23,7 +23,22 @@ const ShowInventory = ({ setCartCount}) => {
                     <AddToCartButton item={item} setCartCount={setCartCount}/>
                 </td>
             )
-            setData(listItems)
+
+            let rows =  []
+            let chunk = []
+            for (let i = 0; i < listItems.length; i++){
+                chunk.push(listItems[i])
+                if (chunk.length === 3 || i == listItems.length - 1) {
+                    rows.push(
+                        <tr>
+                            {chunk}
+                        </tr>
+                    )
+                    chunk = []
+                }
+            }
+            
+            setData(rows)
         } catch (err){
             retry[0]++ 
             console.error(err)
@@ -38,12 +53,9 @@ const ShowInventory = ({ setCartCount}) => {
     return (
         <div>
             {isLoading ? (
-                <p>shits loading...</p>
+                <p>loading...</p>
             ) : (
                 <>
-                    <p>
-                        successfully got {data ? data.length : 0} items from the inventory.
-                    </p>
                     <table>{data}</table>
                 </>
             )}

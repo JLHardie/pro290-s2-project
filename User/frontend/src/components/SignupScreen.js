@@ -17,7 +17,7 @@ function SignupScreen({SwapScreens}){
         <br/><br/>
         <CreateAccountButton SwapScreens={SwapScreens} />
         <p>Or</p>
-        <button style={{width: "10%", height:"40px"}} onClick={SwapScreens}>Sign In</button>
+        <button style={{width: "20%", height:"40px"}} onClick={SwapScreens}>Sign In</button>
       </>
     )
   }
@@ -71,7 +71,7 @@ function CreateAccountButton({SwapScreens}){
         }
     }
     return (
-        <button onClick={CreateAccount} style={{width: "15%", height:"40px"}} disabled={isLoading}>Create Account</button>
+        <button onClick={CreateAccount} style={{width: "20%", height:"40px"}} disabled={isLoading}>Create Account</button>
     )
 
   }
