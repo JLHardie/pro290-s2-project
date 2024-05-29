@@ -22,12 +22,14 @@ function App() {
             </ul>
         </nav>
       </header>
+      <div>
       <main>
         <h1 id="space">Inventory</h1>
         <Suspense fallback={<p>Loading...</p>}>
           <ShowInventory setCartCount={setCartCount}/>
         </Suspense>
       </main>
+      </div>
     </>
   );
 }
