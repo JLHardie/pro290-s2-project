@@ -7,8 +7,8 @@ import org.springframework.data.annotation.Id;
 
 public class Ticket {
     @Id
-    private UUID ticketId;
-    private UUID customerId;
+    private String ticketId;
+    private String customerId;
     private String issue;
     private String status;
     private String notes = "";
@@ -21,10 +21,10 @@ public class Ticket {
         this.notes = notes;
     }
 
-    public UUID getCustomerId() {
+    public String getCustomerId() {
         return customerId;
     }
-    public void setCustomerId(UUID customerId) {
+    public void setCustomerId(String customerId) {
         this.customerId = customerId;
     }
 
@@ -49,10 +49,10 @@ public class Ticket {
         this.status = status;
     }
 
-    public UUID getTicketId() {
+    public String getTicketId() {
         return ticketId;
     }
-    public void setTicketId(UUID ticketId) {
+    public void setTicketId(String ticketId) {
         this.ticketId = ticketId;
     }
 }

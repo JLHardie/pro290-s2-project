@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ShowTickets from './components/DisplayTickets';
 
 function TicketForm() {
     const [showForm, setShowForm] = useState(false);
@@ -34,6 +35,7 @@ function TicketForm() {
       <div class="split left">
         <button id="create" onClick={() => setShowForm(true)}>Create Ticket</button>
         <br />
+          <ShowTickets/>
           <div class="ticket" id="ticket1">
             <h2>Ticket 1</h2>
             <h4>[insert issue here]</h4>
@@ -72,16 +74,43 @@ function TicketForm() {
         <div className="popup">
           <div className="popup-content">
             <h2>Create Ticket</h2>
-            <form /*onSubmit={function here !!!}*/>
+            <form action='http://localhost:8084' method="POST" enctype='application/json'>
               <label htmlFor="cID">Customer ID:</label><br />
-              <input type="text" id="cID" name="cID" value={formData.cID} onChange={handleChange} required /><br />
+              <input type="text" id="customerId" name="cID" value={formData.cID} onChange={handleChange} required /><br />
               <label htmlFor="issue">Issue:</label><br />
               <input type="text" id="issue" name="issue" value={formData.issue} onChange={handleChange} required /><br />
               <label htmlFor="notes">Notes:</label><br />
               <textarea id="notes" name="notes" value={formData.notes} onChange={handleChange} required></textarea><br />
               <label htmlFor="status">Status:</label><br />
               <input type="text" id="status" name="status" value={formData.status} onChange={handleChange} required /><br /><br />
-              <input type="submit" value="Create" id="submitButton"/>
+              <button onClick={async () => {
+                try {
+                  let custID= document.getElementById("customerId").value
+                  let issue= document.getElementById("issue").value
+                  let status= document.getElementById("status").value
+                  let notes= document.getElementById("notes").value
+      
+                  const resp= await fetch('http://localhost:8080/ticketService',
+                      {
+                          method: "POST",
+                          headers: {
+                            "Content-Type": "application/json",
+                          },
+                          body: {
+                              "issue": issue,
+                              "status": status,
+                              "notes": notes,
+                              "customerId": custID
+                          }
+                      }
+                  )
+                  if (resp.status === 200) {
+                      window.location.href = 'http://localhost:3005'
+                  }
+              } catch (error) {
+                  console.error(error)
+              }
+              }}>Submit</button>
             </form>
             <button onClick={() => setShowForm(false)}>Close</button>
           </div>

@@ -30,27 +30,27 @@ public class TicketRestController {
 
     @GetMapping("/{ticketId}")
     @ResponseStatus(code = HttpStatus.OK)
-    public Ticket getTicket(@PathVariable UUID ticketId) {
+    public Ticket getTicket(@PathVariable String ticketId) {
         return repo.findById(ticketId).get();
     }
 
     @GetMapping("/customer/{customerId}")
     @ResponseStatus(code = HttpStatus.OK)
-    public List<Ticket> getTicketsByCustomer(@PathVariable UUID customerId) {
+    public List<Ticket> getTicketsByCustomer(@PathVariable String customerId) {
         return repo.findByCustomerId(customerId);
     }
 
     @PostMapping("/")
     @ResponseStatus(code = HttpStatus.ACCEPTED)
     public Ticket createTicket(@RequestBody Ticket ticket) {
-        ticket.setTicketId(UUID.randomUUID());
+        ticket.setTicketId(UUID.randomUUID().toString());
         ticket.setOpenDate(LocalDate.now());
         return repo.save(ticket);
     }
 
     @PutMapping("/{ticketId}")
     @ResponseStatus(code = HttpStatus.ACCEPTED)
-    public Ticket updateTicket(@PathVariable UUID ticketId, @RequestBody Ticket ticket) {
+    public Ticket updateTicket(@PathVariable String ticketId, @RequestBody Ticket ticket) {
         if (ticket.getTicketId().equals(ticketId)) {
             return repo.save(ticket);
         } else {
@@ -60,7 +60,7 @@ public class TicketRestController {
 
     @DeleteMapping("/{ticketId}")
     @ResponseStatus(code = HttpStatus.OK)
-    public void deleteTicket(@PathVariable UUID ticketId) {
+    public void deleteTicket(@PathVariable String ticketId) {
         repo.deleteById(ticketId);
     }
 }
