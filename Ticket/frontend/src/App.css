@@ -95,16 +95,93 @@ li:hover {
   background-color: #7d4b6a;
 }
 
+#edit {
+  margin-top: 10%;
+  background-color: #a98ab0;
+  border-color: #7d4b6a;
+  color: #fff;
+  width: 40%;
+  text-align: center;
+  margin-left: 30%;
+  padding: 3% 10% 3% 10%;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+#edit:hover {
+  background-color: #7d4b6a;
+}
+
 .ticketDesc {
   background-color: #a98ab0;
   border-color: #7d4b6a;
   color: #fff;
   margin-top: 10%;
-  width:85%;
+  width:94%;
   text-align: center;
   padding: 3% 3% 3% 3%;
 }
 
 p {
   font-size: 20px;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #48576b;
+  color: #fff;
+  padding: 20px;
+  border: 1px solid #001f3f;
+  z-index: 1000;
+  height: 45%;
+  width: 20%;
+}
+
+.popup-content {
+  text-align: center;
+  font-size: 22px;
+}
+
+.popup-content form {
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup-content input {
+  width: 80%;
+  font-size: 23px;
+}
+
+.popup-content textarea {
+  width: 80%;
+  font-size: 23px;
+}
+
+.popup-content button {
+  margin-top: 10px;
+  width: 20%;
+  font-size: 22px;
+  background-color: #94a7ba;
+  border-color: #001f3f;
+  color: #fff;
+  margin-left: 1%;
+}
+
+.popup-content button:hover {
+  background-color: #001f3f;
+}
+
+#submitButton {
+  width: 60%;
+  font-size: 22px;
+  background-color: #94a7ba;
+  border-color: #001f3f;
+  color: #fff;
+}
+
+#submitButton:hover {
+  background-color: #001f3f;
 }
