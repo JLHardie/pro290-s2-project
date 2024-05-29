@@ -190,6 +190,18 @@ services:
       - TicketServiceAPI
       - OrderServiceAPI
 
+  MailService:
+    build: ./Mailing/PRO290MailingServiceAPI
+    image: mailservice
+    restart: always
+    ports: 
+      - 8085:8080
+    networks:
+      - ComputerRepairNetwork
+    
+      
+
+
   ###    CHAT SERVICES    ###
   ChatFrontend:
     build: ./Chat

@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-function CreateTicket({SwapScreens}) {
+function CreateTicket({setItem, setData, SwapScreens}) {
     return (
         <div>
             <div className="popup">
@@ -15,7 +15,7 @@ function CreateTicket({SwapScreens}) {
                   <textarea id="notes" name="notes"></textarea><br />
                   <label htmlFor="status">Status:</label><br />
                   <input type="text" id="status" name="status"/><br /><br />
-                  <CreateNewTicketButton SwapScreens={SwapScreens}/> <br />
+                  <CreateNewTicketButton setItem={setItem} setData={setData} SwapScreens={SwapScreens}/> <br />
                 
                 <button onClick={SwapScreens}>Back</button>
               </div>
@@ -24,11 +24,11 @@ function CreateTicket({SwapScreens}) {
     );
 }
 
-function CreateNewTicketButton() {
+function CreateNewTicketButton({setItem, setData ,SwapScreens}) {
   const [isLoading, setLoading] = useState(false)
 
 
-  const CreateTicket = async({SwapScreens}) => {
+  const CreateTicket = async() => {
     try {
       setLoading(true)
       let customerId = document.getElementById('cID').value
@@ -51,6 +51,21 @@ function CreateNewTicketButton() {
       })
       if (response === 202) {
         SwapScreens()
+        let response = await fetch('http://localhost:8080/ticketService')
+        let body = await response.json()
+        let count = 1
+        const ticketList = body.map(ticket => {
+          function showItem() {
+              setItem(ticket)
+          }
+          return <div className="ticket" key={`ticket${count}`} onClick={showItem}>
+              <h2>Ticket {count++}</h2>
+              <h4>{ticket.issue}</h4>
+              <h4>{ticket.status}</h4>
+          </div>
+          }
+        )
+        setData(ticketList)
       }
     } catch (error){
       console.error(error)
