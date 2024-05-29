@@ -49,8 +49,7 @@ function CreateNewTicketButton({setItem, setData ,SwapScreens}) {
         },
         body: JSON.stringify(ticket)
       })
-      if (response === 202) {
-        SwapScreens()
+      if (response.status === 202) {
         let response = await fetch('http://localhost:8080/ticketService')
         let body = await response.json()
         let count = 1
@@ -66,6 +65,7 @@ function CreateNewTicketButton({setItem, setData ,SwapScreens}) {
           }
         )
         setData(ticketList)
+        SwapScreens()
       }
     } catch (error){
       console.error(error)

@@ -23,7 +23,6 @@ header {
 }
 
 ul {
-  position: fixed;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -71,7 +70,6 @@ li:hover {
   display: flex;
   padding: 10px;
   background-color: #001f3f;
-  position: fixed;
   bottom: 0;
   width: 100%;
   box-sizing: border-box;
